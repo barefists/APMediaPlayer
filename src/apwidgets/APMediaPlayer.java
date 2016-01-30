@@ -78,7 +78,7 @@ public class APMediaPlayer implements OnPreparedListener, OnErrorListener{
 		
 		AssetFileDescriptor afd = null;
 		try {
-			afd = pApplet.getAssets().openFd(getFile());
+			afd = pApplet.getActivity().getAssets().openFd(getFile());
 			mediaPlayer.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
 			afd.close();
 			mediaPlayer.prepare();
